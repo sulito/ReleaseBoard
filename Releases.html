@@ -1,47 +1,34 @@
-
-
-
-
-
-
-
-
 $.ajax({
 
-                                url: '//shark.stubcorp.dev/sdp-services/release/4,
-                                dataType: 'jsonp',
+    url: '//shark.stubcorp.dev/sdp-services/release/4,
+                                dataType: 'jsonp ',
                                 error: function(jqXHR, textStatus, errorThrown) { //if call fails, redirect to stubhub 404
-                                                $(location).attr('href', '/404.html');
+                                                $(location).attr('
+    href ', ' / 404.html ');
                                 },
                                 success: function(data) {
                                                 var responseCount = 0;
-                                                if (data.response.numFound == 0) { //if artist doesn't exist, redirect to 404. only happens when user hits the url directly
-                                                                $(location).attr('href', '/404.html');
-                                                }
-                                                info = data.response.docs[0];
-                                                while (data.response.docs[responseCount] !== undefined && data.response.docs[responseCount].IS_ACTIVE == null) {
-                                                                responseCount++;
-                                                }
-                                                if (data.response.docs[responseCount] === undefined) {
-                                                                responseCount = 0;
-                                                }
-                                                info = data.response.docs[responseCount];
-                                                //prep div to hold all of the content
-                                                if ($(location).attr('href').indexOf(".com") != -1) {
-                                                                $('#content > div > div').after('<div id="GridMiddle"></div>');
-                                                                //$('.setFormattingContext').removeAttr('id');
-                                                } else if ($(location).attr('href').indexOf(".co.uk") != -1) {
-                                                //e: change setFormattingContext class name to something more unique
-                                                                $('.setFormattingContext').removeAttr('id');
-                                                                $('#GridTop').after('<div id="GridMiddle"></div>');
-                                                }
-
-                                                $('#content').html(data.content);
-
-                                                // $('#container').append('<div id="GridMiddle"></div>');
-                                                
-                                        }
-                                })
-                        
+                                                if (data.response.numFound == 0) { //if artist doesn'
+    t exist,
+    redirect to 404.only happens when user hits the url directly
+    $(location).attr('href', '/404.html');
+}
 
 
+info = data.response.docs[responseCount];
+//prep div to hold all of the content
+if ($(location).attr('href').indexOf(".com") != -1) {
+    $('#content > div > div').after('<div id="GridMiddle"></div>');
+    //$('.setFormattingContext').removeAttr('id');
+} else if ($(location).attr('href').indexOf(".co.uk") != -1) {
+    //e: change setFormattingContext class name to something more unique
+    $('.setFormattingContext').removeAttr('id');
+    $('#GridTop').after('<div id="GridMiddle"></div>');
+}
+
+$('#content').html(data.content);
+
+// $('#container').append('<div id="GridMiddle"></div>');
+
+}
+})
