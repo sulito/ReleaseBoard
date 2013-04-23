@@ -1,15 +1,14 @@
-1. FP 14294 - Ecomm_13.5 Database Pre-Release
-2. [LCX] - LCS Pre-Deploy, all LCX blades
-3. [MCI] - MCI Pre-Deploy, one blade only
 
-4. MOBILE-2102 - Android 1.7.3 Deploy
-5. STUBHUB-2207 - iOS 4.2.1 Deploy
+
+
+
+
 
 
 
 $.ajax({
 
-                                url: '//cat.' + apiserver + '.com/extcatalogapi/artists?_jsonp=?&names=' + getProperName(base_artist) + '&_type=json&fields=IS_ACTIVE ARTIST_NAME ARTIST_BIO ARTIST_BIO_ATTRIBUTION_SOURCE_URL ARTIST_BIO_ATTRIBUTION_SOURCE ARTIST_IMAGE ARTIST_IMAGE_SIZE TRACK_AUDIO_SAMPLE_URL ARTIST_ID ID',
+                                url: '//shark.stubcorp.dev/sdp-services/release/4,
                                 dataType: 'jsonp',
                                 error: function(jqXHR, textStatus, errorThrown) { //if call fails, redirect to stubhub 404
                                                 $(location).attr('href', '/404.html');
@@ -37,13 +36,12 @@ $.ajax({
                                                                 $('#GridTop').after('<div id="GridMiddle"></div>');
                                                 }
 
-                                                // $('#container').append('<div id="GridMiddle"></div>');
-                                                //set h1 to be artist name
-                                                var name = info.ARTIST_NAME;
-                                                $('#GridMiddle').append('<div id="content-header"></div>');
-                                                $('#content-header').append('<h1>' + name + '</h1>');
-                                                
+                                                $('#content').html(data.content);
 
+                                                // $('#container').append('<div id="GridMiddle"></div>');
                                                 
-                                                $('#GridMiddle').append('<div class="clearer"></div>').append('<div id="GridMiddleLeft"></div><div id="GridMiddleRight"></div>');
+                                        }
+                                })
+                        
+
 
